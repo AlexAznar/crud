@@ -11,6 +11,7 @@ switch($_POST['action']){
 		$users = $userModel->getUsers();
 		$listView = new ListView();
 		$listView->output($users);
+		break;
 
 } 
 
