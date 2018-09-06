@@ -11,12 +11,33 @@ class UserModel {
 
 		while ($row = $sql->fetch()) {
 		    $user = new User();
+		    $user->id = $row['id'];
 		    $user->usuario = $row['usuario'];
 		    $user->email = $row['correo'];
 		    array_push($users, $user);
 		}
 
 		return $users;
+	}
+
+	public function getUser($id){
+		$connection = $this->dbConnection();
+		$sql = $connection->query("SELECT * FROM login WHERE id = ".$id);
+
+		while ($row = $sql->fetch()) {
+		    $user = new User();
+		    $user->id = $row['id'];
+		    $user->usuario = $row['usuario'];
+		    $user->email = $row['correo'];
+		}
+
+		return $user;
+	}
+
+	public function editUser($user){
+		$connection = $this->dbConnection();
+		$sql = "UPDATE login SET usuario=?, correo=? WHERE id=?";
+		$connection->prepare($sql)->execute([$user->usuario, $user->email, $user->id]);
 	}
 
 	public function dbConnection(){
