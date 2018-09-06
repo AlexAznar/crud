@@ -9,7 +9,7 @@ class UserModel {
 
 		$users = array();
 
-		while ($row = $stmt->fetch()) {
+		while ($row = $sql->fetch()) {
 		    $user = new User();
 		    $user->usuario = $row['usuario'];
 		    $user->email = $row['email'];
