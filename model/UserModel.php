@@ -3,7 +3,7 @@
 class UserModel { 
 
 	public function getUsers(){
-		$connection = dbConnection()
+		$connection = $this->dbConnection();
 
 		$sql = $connection->query("SELECT * FROM login ORDER BY id DESC");
 
@@ -12,7 +12,7 @@ class UserModel {
 		while ($row = $sql->fetch()) {
 		    $user = new User();
 		    $user->usuario = $row['usuario'];
-		    $user->email = $row['email'];
+		    $user->email = $row['correo'];
 		    array_push($users, $user);
 		}
 
@@ -22,7 +22,7 @@ class UserModel {
 	public function dbConnection(){
 
 		try {
-			$connection = new PDO('mysql:host=localhost;dbname=gervillaesphoto','root','root');
+			return new PDO('mysql:host=localhost;dbname=gervillaesphoto','root','gervillaes');
 		} catch (PDOException $exception) {
 			echo "Error! ". $exception->getMessage(). "<br/>";
 			die();

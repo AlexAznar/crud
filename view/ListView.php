@@ -3,18 +3,19 @@
 class ListView 
 {
 	public function output($users) {
+
           $html = '<!DOCTYPE html>
                     <html>
                     <head>
                     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	                    <title>GervillaesPhoto Tablas</title>
-	                    <link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
-	                    <link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/alertify.css">
-	                    <link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/themes/default.css">
+	                    <link rel="stylesheet" type="text/css" href="view/librerias/bootstrap/css/bootstrap.css">
+	                    <link rel="stylesheet" type="text/css" href="view/librerias/alertifyjs/css/alertify.css">
+	                    <link rel="stylesheet" type="text/css" href="view/librerias/alertifyjs/css/themes/default.css">
 
-	                    <script src="librerias/jquery-3.2.1.min.js"></script>
-	                    <script src="librerias/bootstrap/js/bootstrap.js"></script>
-	                    <script src="librerias/alertifyjs/alertify.js"></script>
+	                    <script src="view/librerias/jquery-3.2.1.min.js"></script>
+	                    <script src="view/librerias/bootstrap/js/bootstrap.js"></script>
+	                    <script src="view/librerias/alertifyjs/alertify.js"></script>
                     </head>
                     <body>
 
@@ -36,7 +37,7 @@ class ListView
 					                                <td>Editar</td>
 					                                <td>Eliminar</td>
 				                                </tr>';
-
+				                                	
 				                                foreach ($users as $user) 
 				                                {
 					                      			$html .= '<tr>
