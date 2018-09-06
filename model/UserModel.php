@@ -40,6 +40,14 @@ class UserModel {
 		$connection->prepare($sql)->execute([$user->usuario, $user->email, $user->id]);
 	}
 
+
+	public function deleteUser($id){
+		$connection = $this->dbConnection();
+		$sql = "DELETE FROM login WHERE id=?";
+		$connection->prepare($sql)->execute([$id]);
+	}
+
+
 	public function dbConnection(){
 
 		try {
